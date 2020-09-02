@@ -11,14 +11,23 @@ output:
     self_contained: false
 ---
 
+# Data description
+The  data is obtained from R package `coronavirus`[@coronavirus] provided by RamiKrispin, which contains COVID-19 data from 188 countries or regions, and the raw data collected and arranged by the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE). In this blog, I will focus on China data, which contains 22,440 observations from 2020-01-22 to 2020-08-28.
+
+# Data Analysis
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-library(tidyverse)
 library(coronavirus)
+library(tidyverse)
+library(DT)
+library(formattable)
 library(plotly)
 library(lubridate)
 library(knitr)
 library(dplyr)
+library(sparkline)
+library(reactable)
 library(htmltools)
 library(kableExtra)
 data("coronavirus")
@@ -34,11 +43,12 @@ covid_ghana <- coronavirus %>%
 covid_ghana_wider <- covid_ghana %>%
   select("date","country","type","cases") %>%
 group_by(type) %>%
-  pivot_wider(names_from = "type", values_from = "cases")
+  pivot_wider(names_from = "type", values_from = "cases") %>%
+  mutate(confirmed_sum = cumsum(confirmed), death_sum = cumsum(death), recovered_sum = cumsum(recovered)) 
 ```
 
 ```{r summary}
-summary_ghana <- covid_ghana %>%
+summary_ghana <- covid_ghana_wider %>%
   summarise(avg_death = mean(death), avg_confirmed = mean(confirmed), avg_recovered = mean(recovered)) %>%
   pivot_longer(c("avg_death", "avg_confirmed","avg_recovered"), names_to = "type", values_to = "avg") 
 ```
@@ -65,8 +75,22 @@ p1 <- covid_ghana %>%
 ggplotly(p1)
 ``` 
 
+```{r}
+datatable(covid_ghana_wider, 
+          escape = FALSE,
+          filter = 'top',
+          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:pink; padding-bottom: 20px; font-size:220% ;','Case number of COVID-19 in Ghana'),
+          options = list(paging = TRUE, 
+                         columnDefs = list(list(className = 'dt-center', targets = 3:5)),
+                         fnDrawCallback = htmlwidgets::JS(
+  '
+function(){
+  HTMLWidgets.staticRender();
+}
+'
+)
+       )) %>%
+  spk_add_deps()
+```
 
-# Data description
 
-
-# Data Analysis
