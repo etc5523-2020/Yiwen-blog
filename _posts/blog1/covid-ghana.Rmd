@@ -1,0 +1,27 @@
+---
+title: "COVID-19 analysis for Ghana"
+description: |
+  Welcome to our new blog, This is the anlaysis of COVID-19 for Ghana, mainly focusing on the confirmed case numbers. Hope you can enjoy reading what I share and display!
+author:
+  - name: Yiwen Zhang 
+
+date: 02-09-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(coronavirus)
+data("coronavirus")
+
+```
+
+```{r filterdata}
+covid_ghana <- coronavirus %>%
+  filter(country == "Ghana")
+```
+
+
