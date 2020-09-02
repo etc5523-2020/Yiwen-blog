@@ -25,7 +25,11 @@ covid_ghana <- coronavirus %>%
   select("date","country","type","cases") %>%
 group_by(type) %>%
   pivot_wider(names_from = "type", values_from = "cases")
+```
 
+```{r summary}
+summary_ghana <- covid_ghana %>%
+  summarise(avg_death = mean(death), avg_confirmed = mean(confirmed), avg_recovered = mean(recovered)) 
 ```
 
 # Data description
