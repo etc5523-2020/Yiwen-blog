@@ -1,5 +1,5 @@
 ---
-title: "My Blog"
+title: "Yiwen's blog for ETC5523"
 author: "Yiwen Zhang"
 site: distill::distill_website
 listing: posts
