@@ -27,7 +27,11 @@ data("coronavirus")
 
 ```{r filterdata}
 covid_ghana <- coronavirus %>%
-  filter(country == "Ghana") %>%
+  filter(country == "Ghana") 
+```
+
+```{r pivotwider}
+covid_ghana_wider <- covid_ghana %>%
   select("date","country","type","cases") %>%
 group_by(type) %>%
   pivot_wider(names_from = "type", values_from = "cases")
@@ -47,6 +51,20 @@ kable(summary_ghana,
                 full_width = F,
                 latex_options = c("hold_position"))
 ```
+
+```{r COVID19cases, echo=FALSE}
+p1 <- covid_ghana %>%
+  ggplot(aes(x = date,
+             color = type,
+             group = type)) +
+  geom_line(aes(y = cases))+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+
+ggplotly(p1)
+``` 
+
 
 # Data description
 
