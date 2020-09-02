@@ -15,6 +15,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(coronavirus)
+library(plotly)
+library(lubridate)
+library(knitr)
+library(dplyr)
+library(htmltools)
+library(kableExtra)
 data("coronavirus")
 
 ```
@@ -29,7 +35,17 @@ group_by(type) %>%
 
 ```{r summary}
 summary_ghana <- covid_ghana %>%
-  summarise(avg_death = mean(death), avg_confirmed = mean(confirmed), avg_recovered = mean(recovered)) 
+  summarise(avg_death = mean(death), avg_confirmed = mean(confirmed), avg_recovered = mean(recovered)) %>%
+  pivot_longer(c("avg_death", "avg_confirmed","avg_recovered"), names_to = "type", values_to = "avg") 
+```
+
+```{r table1, echo=FALSE}
+kable(summary_ghana,
+      booktabs = TRUE, 
+      caption = "The average death,confirmed and recovered cases in Ghana") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), 
+                full_width = F,
+                latex_options = c("hold_position"))
 ```
 
 # Data description
