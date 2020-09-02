@@ -5,17 +5,16 @@ description: |
 author:
   - name: Yiwen Zhang 
 
-date: "`r Sys.Date()`"
+date: 09-03-2020
+output:
+  distill::distill_article:
+    self_contained: false
 bibliography: references.bib
 biblio-style: authoryear-comp
-output: 
-  bookdown::html_document2:
-   citation_package: biblatex
-   toc: TRUE
 ---
 
 # Data description
-The  data is get from R package `coronavirus`[@coronavirus] provided by RamiKrispin, which contains daily summary of the Corona virus (COVID-19) cases (confirmed, death, and recovered) by state/province with seven variables. This data set is originally collected and cleaned by the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) on <https://systems.jhu.edu/research/public-health/ncov/> . In my blog, Ghana is chosen as my target country, whose data consists of 576 observations during 2020-01-22 and 2020-07-31.
+The  data is get from R package `coronavirus`[@coronavirus] provided by RamiKrispin, which contains daily summary of the Corona virus (COVID-19) cases (confirmed, death, and recovered) by state/province with seven variables. This data set is originally collected and cleaned by the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) [@mappingCOVID-19] . In my blog, Ghana is chosen as my target country, whose data consists of 576 observations during 2020-01-22 and 2020-07-31.
 
 # Data Analysis
 
