@@ -1,0 +1,11 @@
+---
+title: "About this blog"
+description: |
+
+  This is the blog for ETC5523, which will consist of relevant blogs! 
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
