@@ -12,7 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(coronavirus)
 data("coronavirus")
@@ -21,7 +21,14 @@ data("coronavirus")
 
 ```{r filterdata}
 covid_ghana <- coronavirus %>%
-  filter(country == "Ghana")
+  filter(country == "Ghana") %>%
+  select("date","country","type","cases") %>%
+group_by(type) %>%
+  pivot_wider(names_from = "type", values_from = "cases")
+
 ```
 
+# Data description
 
+
+# Data Analysis
