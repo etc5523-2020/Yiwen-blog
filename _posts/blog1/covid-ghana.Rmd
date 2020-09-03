@@ -49,7 +49,8 @@ covid_ghana_wider <- covid_ghana %>%
   select("date","country","type","cases") %>%
 group_by(type) %>%
   pivot_wider(names_from = "type", values_from = "cases") %>%
-  mutate(confirmed_sum = cumsum(confirmed), death_sum = cumsum(death), recovered_sum = cumsum(recovered)) 
+  mutate(confirmed_sum = cumsum(confirmed), death_sum = cumsum(death), recovered_sum = cumsum(recovered)) %>%
+  setNames(c('Date', 'Country','death', 'confirmed', 'recovered', 'Cumulative deaths', 'Cumulative confirmed', 'Cumulative recovered'))
 ```
 
 ```{r summary}
@@ -100,7 +101,7 @@ ggplotly(p1)
 
 In Figure \@ref(fig:interactive), readers can explore the data by self with searching or setting certain value of the variable they want. 
 
-It should be explained that "confirmed", "death" and "recovered" respectively represent the number of confirmed, dead and recovered cases in one day. When followed by the suffix "sum", they represent the cumulative number of cases so far. Therefore, we can also observe the total number of cases.
+It should be explained that "confirmed", "death" and "recovered" respectively represent the number of confirmed, dead and recovered cases in one day. When followed by the prefix "sum", they represent the cumulative number of cases so far. Therefore, we can also observe the total number of cases.
 
 
 ```{r interactive,fig.cap="Case number of COVID-19 in Ghana"}
@@ -122,10 +123,7 @@ datatable(covid_ghana_wider,
     "}"
 )
        )) %>%
-  spk_add_deps() %>%
-
-
-  DT::formatStyle(columns = c("death", "confirmed", "recovered", "death_sum", "confirmed_sum", "recovered_sum"), fontSize = '120%') 
+  spk_add_deps() 
 
   
 ```
