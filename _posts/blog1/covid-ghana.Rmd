@@ -1,17 +1,23 @@
 ---
 title: "COVID-19 analysis for Ghana"
 description: |
-  Welcome to our new blog, This is the anlaysis of COVID-19 for Ghana, mainly focusing on the confirmed case numbers. Hope you can enjoy reading what I share and display!
+  Welcome to my new blog, this is the anlaysis of COVID-19 for Ghana, mainly focusing on exploring case numbers. Hope you can enjoy reading what I share and display!
 author:
   - name: Yiwen Zhang 
-
 date: 09-03-2020
+categories:
+  - COVID-19 Ghana
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 2
     self_contained: false
+preview: COVID-19.png
 bibliography: references.bib
 biblio-style: authoryear-comp
+
 ---
+
 
 # Introduction
 At the beginning of 2020, COVID-19 was first found and broke out in Wuhan, China. Then, the disease rapidly spread and broke out in more than 188 countries and regions around the world. In this blog, I focus on the spread and control of COVID-19 in Ghana, an African country. I'll show you the story behind the numbers through two tables and one graph.
