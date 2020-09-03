@@ -107,20 +107,27 @@ It should be explained that "confirmed", "death" and "recovered" respectively re
 datatable(covid_ghana_wider, 
           escape = FALSE,
           filter = 'top',
-          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:pink; padding-bottom: 20px; font-size:220% ;','Case number of COVID-19 in Ghana'),
+          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:purple; padding-bottom: 15px; font-size:200% ;','Case number of COVID-19 in Ghana'),
           options = list(paging = TRUE, 
                          pageLength = 7,
-                         pageWidth = 4,
-                         columnDefs = list(list(className = 'dt-center', targets = 3:5)),
+                         pageWidth = 7,
+                         columnDefs = list(list(className = 'dt-center')),
                          fnDrawCallback = htmlwidgets::JS(
-  '
-function(){
-  HTMLWidgets.staticRender();
-}
-'
+ "function(settings, json) {",
+    "$(this.api().table().header()).css({'font-size': '15px', 'background-color': '#c2d1f0', 'color': '#fff'});",
+    "$(this.api().columns().data()).css({'font-size': '5px'});",
+
+    "$(this.api().tables().body()).css({'font-size': '12px'});",
+ 
+    "}"
 )
        )) %>%
-  spk_add_deps()
+  spk_add_deps() %>%
+
+
+  DT::formatStyle(columns = c("death", "confirmed", "recovered", "death_sum", "confirmed_sum", "recovered_sum"), fontSize = '120%') 
+
+  
 ```
 
 # Conclusion
