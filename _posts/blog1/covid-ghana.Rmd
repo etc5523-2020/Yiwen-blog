@@ -32,10 +32,9 @@ library(plotly)
 library(lubridate)
 library(knitr)
 library(dplyr)
-library(sparkline)
 library(reactable)
-library(htmltools)
 library(kableExtra)
+library(sparkline)
 data("coronavirus")
 
 ```
@@ -88,7 +87,8 @@ p1 <- covid_ghana %>%
 ggplotly(p1)
 ``` 
 
-```{r}
+In Table \@ref(tab:interactive), reader can explore the data by self. 
+```{r interactive}
 datatable(covid_ghana_wider, 
           escape = FALSE,
           filter = 'top',
@@ -106,4 +106,32 @@ function(){
   spk_add_deps()
 ```
 
+# Conclusion
 
+
+# Acknowledgments
+
+Thanks for the providers of these packages used as follows:
+
+
+- plotly [@plotly]
+
+- tidyverse [@tidyverse]
+
+- lubridate [@lubridate] 
+
+- kableExtra [@kableExtra]
+
+- DT [@DT]
+
+- dplyr [@dplyr]
+
+- knitr [@knitr]
+
+- formattable [@formattable]
+
+- reactable [@reactable]
+
+- coronavirus [@coronavirus]
+
+- sparkline [@sparkline]
