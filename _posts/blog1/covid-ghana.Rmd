@@ -59,7 +59,7 @@ summary_ghana <- covid_ghana_wider %>%
   pivot_longer(c("avg_death", "avg_confirmed","avg_recovered"), names_to = "type", values_to = "avg") 
 ```
 
-Figure \@ref(fig:table1) shows that the average value of single day death cases, confirmed cases and recovered cases are 0.948, 184.901 and 167.167 respectively(including 3 decimal places). First of all, we can see that the number of newly confirmed cases in a single day in Ghana is relatively small, less than 1. This means that the spread of COVID-19 in Ghana is not very serious. Secondly, from the number of deaths and recovered cases, it can be seen that the cure rate in Ghana is good, so we could infer that Ghana has done a good job in controlling the epidemic situation. As for the reason for the good control, I found that it was largely because of the early and decisive action taken by government. Its perspective was captured in a statement by Ghana’s president when he announced Africa’s first lock-down on 28 March, So the government had time to prepare for the onslaught of the virus, which turned out to be a success story.[@Ghanastrategy]
+Table \@ref(fig:table1) shows that the average value of single day death cases, confirmed cases and recovered cases are 0.948, 184.901 and 167.167 respectively(including 3 decimal places). First of all, we can see that the number of newly confirmed cases in a single day in Ghana is relatively small, less than 1. This means that the spread of COVID-19 in Ghana is not very serious. Secondly, from the number of deaths and recovered cases, it can be seen that the cure rate in Ghana is good, so we could infer that Ghana has done a good job in controlling the epidemic situation. As for the reason for the good control, I found that it was largely because of the early and decisive action taken by government. Its perspective was captured in a statement by Ghana’s president when he announced Africa’s first lock-down on 28 March, So the government had time to prepare for the onslaught of the virus, which turned out to be a success story.[@Ghanastrategy]
 
 ```{r table1, fig.cap="The average death,confirmed and recovered cases in Ghana"}
 datatable(summary_ghana, 
@@ -99,7 +99,7 @@ ggplotly(p1)
 
 
 
-In Figure \@ref(fig:interactive), readers can explore the data by self with searching or setting certain value of the variable they want. 
+In Table \@ref(fig:interactive), readers can explore the data by self with searching or setting certain value of the variable they want. 
 
 It should be explained that "confirmed", "death" and "recovered" respectively represent the number of confirmed, dead and recovered cases in one day. When followed by the prefix "sum", they represent the cumulative number of cases so far. Therefore, we can also observe the total number of cases.
 
@@ -112,6 +112,7 @@ datatable(covid_ghana_wider,
           options = list(paging = TRUE, 
                          pageLength = 7,
                          pageWidth = 7,
+                         scrollX = T, #fit the table within the page margin
                          columnDefs = list(list(className = 'dt-center')),
                          fnDrawCallback = htmlwidgets::JS(
  "function(settings, json) {",
