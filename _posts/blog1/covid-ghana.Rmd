@@ -58,28 +58,37 @@ summary_ghana <- covid_ghana_wider %>%
   pivot_longer(c("avg_death", "avg_confirmed","avg_recovered"), names_to = "type", values_to = "avg") 
 ```
 
-Table \@ref(tab:table1) shows that the average value of single day death cases, confirmed cases and recovered cases are 0.948, 184.901 and 167.167 respectively(including 3 decimal places). First of all, we can see that the number of newly confirmed cases in a single day in Ghana is relatively small, less than 1. This means that the spread of COVID-19 in Ghana is not very serious. Secondly, from the number of deaths and recovered cases, it can be seen that the cure rate in Ghana is good, so we could infer that Ghana has done a good job in controlling the epidemic situation.
-```{r table1, echo=FALSE}
-kable(summary_ghana,
-      booktabs = TRUE, 
-      caption = "The average death,confirmed and recovered cases in Ghana") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), 
-                full_width = F,
-                latex_options = c("hold_position","scale_down")
-                
-                )
+Figure \@ref(fig:table1) shows that the average value of single day death cases, confirmed cases and recovered cases are 0.948, 184.901 and 167.167 respectively(including 3 decimal places). First of all, we can see that the number of newly confirmed cases in a single day in Ghana is relatively small, less than 1. This means that the spread of COVID-19 in Ghana is not very serious. Secondly, from the number of deaths and recovered cases, it can be seen that the cure rate in Ghana is good, so we could infer that Ghana has done a good job in controlling the epidemic situation.
 
-
+```{r table1, fig.cap="The average death,confirmed and recovered cases in Ghana"}
+datatable(summary_ghana, 
+          escape = FALSE,
+          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:blue; padding-bottom: 20px; font-size:220% ;','The average cases in Ghana'),
+          options = list(paging = FALSE, 
+                         dom = "t",
+                         columnDefs = list(list(className = 'dt-center')),
+                         fnDrawCallback = htmlwidgets::JS(
+  '
+function(){
+  HTMLWidgets.staticRender();
+}
+'
+)
+       )) %>%
+  spk_add_deps()
 ```
 
+
 In Figure \@ref(fig:COVID19cases), we could see the day-by-day trend of the number of three cases over time. The green line represents the death cases, the red line represents the confirmed cases and the blue ling represents the recovered cases. It can be seen that the number of deaths has been maintained at a stable level close to zero, which indicates that the death number in Ghana is low. At the beginning of the COVID-19, it can be seen that the number of confirmed cases in a single day is gradually increasing, while the number of recovered cases is very low. This is because the initial stage still belongs to the period of transmission and outbreak of the disease, and its treatment also needs a certain period of time. Therefore, we can see that the number of confirmed cases in the middle stage has decreased, while the recovered cases have a small peak, which is a signal of a breakthrough in epidemic control. Finally, in the late stage, the number of confirmed cases further decreased and the number of recovered cases increased, indicating that the epidemic situation has been under a more stable control.
+
+
 ```{r COVID19cases, echo=FALSE,fig.cap="Sing day change of the case number over time"}
 p1 <- covid_ghana %>%
   ggplot(aes(x = date,
              color = type,
              group = type)) +
   geom_line(aes(y = cases))+
-  ggtitle("Sing day change of the case number over time")+
+  ggtitle("Single day change of the case number over time")+
   theme(axis.title.x = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank())
@@ -87,13 +96,19 @@ p1 <- covid_ghana %>%
 ggplotly(p1)
 ``` 
 
-In Table \@ref(tab:interactive), reader can explore the data by self. 
-```{r interactive}
+
+
+In Figure \@ref(fig:interactive), reader can explore the data by self. 
+
+
+
+```{r interactive,fig.cap="Case number of COVID-19 in Ghana"}
 datatable(covid_ghana_wider, 
           escape = FALSE,
           filter = 'top',
           caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:pink; padding-bottom: 20px; font-size:220% ;','Case number of COVID-19 in Ghana'),
           options = list(paging = TRUE, 
+                         pageLength = 9,
                          columnDefs = list(list(className = 'dt-center', targets = 3:5)),
                          fnDrawCallback = htmlwidgets::JS(
   '
