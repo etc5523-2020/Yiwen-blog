@@ -11,7 +11,9 @@ navbar:
       href: about.html
     - icon: fa fa-github
       href: https://github.com/Yiwen-Zhang-259
-      
+
 output: 
    distill::distill_article:
     css: styles.css
+    include:
+      after_body: footer.Rhtml
