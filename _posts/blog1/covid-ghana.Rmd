@@ -27,7 +27,7 @@ The  data is get from R package `coronavirus`[@coronavirus] provided by RamiKris
 
 # Data Analysis
 
-In this section, I will explore the spread and control of covid-19 in Ghana by analyzing single day confirmed cases, deaths and rehabilitation cases in Ghana. An interactive table will also be provided for readers to explore data by themselves.
+In this section, I will explore the spread and control of COVID-19 in Ghana by analyzing single day confirmed cases, deaths and recovered cases in Ghana. 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(coronavirus)
@@ -87,7 +87,7 @@ function(){
 ```
 
 
-In Figure \@ref(fig:COVID19cases), we could see the day-by-day trend of the number of three cases over time. The green line represents the death cases, the red line represents the confirmed cases and the blue ling represents the recovered cases. It can be seen that the number of deaths has been maintained at a stable level close to zero, which indicates that the death number in Ghana is low. At the beginning of the COVID-19, it can be seen that the number of confirmed cases in a single day is gradually increasing, while the number of recovered cases is very low. This is because the initial stage still belongs to the period of transmission and outbreak of the disease, and its treatment also needs a certain period of time. Therefore, we can see that the number of confirmed cases in the middle stage has decreased, while the recovered cases have a small peak, which is a signal of a breakthrough in epidemic control. Finally, in the late stage, the number of confirmed cases further decreased and the number of recovered cases increased, indicating that the epidemic situation has been under a more stable control.
+In Figure \@ref(fig:COVID19cases), we could see the day-by-day trend of the number of three cases over time. The green line represents the death cases, the red line represents the confirmed cases and the blue line represents the recovered cases. It can be seen that the number of deaths has been maintained at a stable level close to zero, which indicates that the death number in Ghana is low. At the beginning of the COVID-19, it can be seen that the number of confirmed cases in a single day is gradually increasing, while the number of recovered cases is very low. This is because the initial stage still belongs to the period of transmission and outbreak of the disease, and its treatment also needs a certain period of time. Therefore, we can see that the number of confirmed cases in the middle stage has decreased, while the recovered cases have a small peak, reaching to 5526 on 2020-06-20, which is a signal of a breakthrough in epidemic control. Finally, in the late stage, the number of confirmed cases further decreased and the number of recovered cases increased, indicating that the epidemic situation has been under a more stable control.
 
 
 ```{r COVID19cases, echo=FALSE,fig.cap="Sing day change of the case number over time"}
@@ -109,6 +109,8 @@ ggplotly(p1)
 In Table \@ref(fig:interactive), readers can explore the data by self with searching or setting certain value of the variable they want. 
 
 It should be explained that "confirmed", "death" and "recovered" respectively represent the number of confirmed, dead and recovered cases in one day. When followed by the prefix "sum", they represent the cumulative number of cases so far. Therefore, we can also observe the total number of cases.
+
+*tips: scroll right to see the complete information of cumulative cases!*
 
 
 ```{r interactive,fig.cap="Case number of COVID-19 in Ghana"}
@@ -133,12 +135,14 @@ datatable(covid_ghana_wider,
        )) %>%
   spk_add_deps() 
 
-  
 ```
+
+
+
 
 # Conclusion
 
-Generally speaking, the situation of COVID-19 in Ghana presents a trend of normal development and ideal control with a level death cases and balanced situation between confirmed cases and recovered cases. However, with the cumulative increase of confirmed cases and the influence of neighboring countries, the ability of the country’s health system will also face a crisis, so both individuals and the whole society of Ghana should still take it seriously.
+Generally speaking, the situation of COVID-19 in Ghana presents a trend of normal development and ideal control with a quite low level death cases and balanced situation between confirmed cases and recovered cases. However, with the cumulative increase of confirmed cases and the influence of neighboring countries, the ability of the country’s health system will also face a crisis, so both individuals and the whole society of Ghana should still take it seriously.
 
 
 # Acknowledgments
