@@ -10,4 +10,6 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is page can provide some services for you to improve your feeling of reading this blog!
+I will provide some services for you to improve your feeling of reading this blog!
+
+This section will be updated with the posting of other blogs!
