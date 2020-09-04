@@ -6,6 +6,7 @@ description: |
   
 ---
 
+
 If there is any mistake, please write an issue on my github to let me know at the following link:
 <https://github.com/etc5523-2020/my-blog-Yiwen-Zhang-259/issues/new>
 
@@ -13,3 +14,14 @@ Other issues please contact me via email!
 
 - Yiwen Zhang
 - yzha0633@student.monash.edu
+
+
+
+Or you can just click the button below to contact!
+
+
+
+<p style="text-align: center;">
+    <a href="https://github.com/Yiwen-Zhang-259" target="_blank" class="fa fa-github"  style="font-size:30px;"></a>
+    <a href="mailto:yzha0633@student.monash.edu" target="_blank" class="fa fa-envelope"  style="font-size:30px;"></a>
+</p>
