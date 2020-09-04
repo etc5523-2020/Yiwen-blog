@@ -1,0 +1,15 @@
+---
+title: "Contact"
+description: |
+
+  Here is my contact information for you to contact me !
+  
+---
+
+If there is any mistake, please write an issue on my github to let me know at the following link:
+<https://github.com/etc5523-2020/my-blog-Yiwen-Zhang-259/issues/new>
+
+Other issues please contact me via email!
+
+- Yiwen Zhang
+- yzha0633@student.monash.edu
