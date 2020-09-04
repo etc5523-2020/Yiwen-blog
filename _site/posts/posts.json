@@ -2,17 +2,19 @@
   {
     "path": "posts/blog1/",
     "title": "COVID-19 analysis for Ghana",
-    "description": "Welcome to our new blog, This is the anlaysis of COVID-19 for Ghana, mainly focusing on the confirmed case numbers. Hope you can enjoy reading what I share and display!",
+    "description": "Welcome to my new blog, this is the anlaysis of COVID-19 for Ghana, mainly focusing on exploring case numbers. Hope you can enjoy reading what I share and display!",
     "author": [
       {
         "name": "Yiwen Zhang",
         "url": {}
       }
     ],
-    "date": "2020-02-09",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2020-09-02T21:35:39+10:00",
+    "date": "2020-09-03",
+    "categories": [
+      "COVID-19 Ghana"
+    ],
+    "preview": "posts/blog1/COVID-19.png",
+    "last_modified": "2020-09-04T12:26:56+10:00",
     "input_file": {}
   }
 ]

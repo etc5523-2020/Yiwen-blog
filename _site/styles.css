@@ -1,0 +1,56 @@
+.distill-site-nav {
+  color: #C0C0C0; 
+  background-color: #3182bd;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* Use specific font in the body of the text */
+html, body, p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  line-height: 1.9; 
+  font-size: 1.0em;
+  text-align:justify;
+  font-style: normal;
+}
+
+.distill-site-nav a:hover {
+  color: #FFF;
+}
+
+/* Change appearance of headers */
+h1, h2, h3, h4, h5 {
+  font-family: 'Fira Mono', sans-serif;
+  color: #383838;
+}
+
+#footer {
+ font-family: Verdana, Geneva, sans-serif;
+ font-size: 0.7em;
+ font-weight: bold;
+ color: #bdbdbd;
+ padding: 10px;
+ margin: 20px;
+ height: auto;
+ width: 90%;
+ text-align: center;
+}
+
+#footer a:link {
+ color: #636363;
+}
+#footer a:visited {
+ color: #C0C0C0;
+}
+#footer a:hover {
+ color: #FFF;
+ background-color: #CC0;
+ text-decoration: none;
+}
+#footer a:active {
+ color: #FFF;
+ background-color: #0C6;
+ text-decoration: none;
+}
+
