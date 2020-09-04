@@ -1,0 +1,30 @@
+.distill-site-nav {
+  color: #C0C0C0; 
+  background-color: #3182bd;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* Use specific font in the body of the text */
+html, body, p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  line-height: 1.9; 
+  font-size: 1.0em;
+  text-align:justify;
+  font-style: normal;
+}
+
+.distill-site-nav a:hover {
+  color: #d95f0e;
+}
+
+/* Change appearance of headers */
+h1, h2, h3, h4, h5 {
+  font-family: 'Fira Mono', sans-serif;
+  color: #383838;
+}
+
+
+
+
