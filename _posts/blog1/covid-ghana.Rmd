@@ -4,6 +4,7 @@ description: |
   Welcome to my new blog, this is the anlaysis of COVID-19 for Ghana, mainly focusing on exploring case numbers. Hope you can enjoy reading what I share and display!
 author:
   - name: Yiwen Zhang 
+    url: https://thirsty-pasteur-78571a.netlify.app/
 date: 09-03-2020
 categories:
   - COVID-19 Ghana
