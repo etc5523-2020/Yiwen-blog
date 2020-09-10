@@ -73,4 +73,21 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
 ```
 
 
+```{r confirmed-data}
+#draw the map of distribution of confirmed cases
+  leaflet() %>%
+            #use setView() to choose the  map center and zoom level
+            setView(lat = 55.50432, lng = 38.03539,  zoom = 3) %>%
+            addTiles() %>%
+            addCircleMarkers(
+                data = covid_location,
+                # set layer-Id to get id in click event
+                layerId = ~Region, 
+                lng = ~LongitudeD,
+                lat = ~Latitude,
+                radius = ~(Conf/2100), # to scale down
+                label = ~Region, #  show label name when mouse hovers
+                weight = 1
+            )
+```
 
