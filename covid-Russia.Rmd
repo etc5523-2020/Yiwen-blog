@@ -13,9 +13,7 @@ output:
     toc: true
     toc_depth: 2
     self_contained: false
-preview: COVID-19.png
-bibliography: references.bib
-biblio-style: authoryear-comp
+
 
 ---
 ```{r setup, include=FALSE}
@@ -55,8 +53,13 @@ region_ventilator <- region_ventilator %>%
 
 region_info_new <- region_info %>%
   select(`Region_eng`,`Latitude`,`Longitude`) 
+
+region_pop <- region_info %>%
+  select(`Region_eng`,`Population`) 
   
 ```
+
+# Story 1
 
 ```{r}
 #rename the column name
@@ -89,5 +92,51 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
                 label = ~Region, #  show label name when mouse hovers
                 weight = 1
             )
+```
+
+# Story 2
+
+```{r}
+region_pop<- region_pop %>%
+  setNames(c("Region","Population"))
+
+ # Identify the top four confirmed rate areas on the last recorded day
+covid_rate = left_join(x = russia_case, y = region_pop, by="Region") %>%
+  mutate(Conf_rate = (Conf/Population)*100000) %>%
+  mutate(Death_rate = (Death/Population)*100000) %>%
+  mutate(Rec_rate = (Rec/Population)*100000)
+
+covid_top_rate <- covid_rate %>%
+  filter(Date == "2020-07-31") %>%
+  arrange(desc(Conf_rate))
+```
+
+```{r topfourarea}
+covid_top_rate %>%
+  head(4) %>%
+  kable(booktabs = TRUE, caption = "Top four confirmed rate areas")
+```
+
+```{r}
+# filter top four confirmed rate areas' data
+
+covid_rate_top4 <- covid_rate %>%
+  filter(Region == c("Yamalo-Nenets Autonomous Okrug","Moscow","Tyva Republic","Murmansk region"))
+```
+
+```{r topfourrate, fig.cap="Confirmed rate of top four areas per 100 thousand people"}
+p2 <- covid_rate_top4 %>%
+  ggplot(aes(x = Date,
+             group = Region)) +
+  geom_line(aes(y = Death_rate, color = "death rate"))+
+  geom_line(aes(y = Rec_rate, color = "recovered rate")) +
+  facet_wrap(~Region) +
+  ggtitle("Confirmed rate of top four areas per 100 thousand people") + 
+  ylab("Rate") +
+  theme(#axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+
+ggplotly(p2)
 ```
 
