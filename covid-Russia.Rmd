@@ -121,18 +121,17 @@ covid_top_rate <- covid_rate %>%
   head(4)
 ```
 
-```{r interactive,fig.cap="Case number of COVID-19 in Ghana"}
+```{r interactive,fig.cap="Rate of top four areas per 100 thousand people"}
 datatable(covid_top_rate, 
           escape = FALSE,
-          filter = 'top',
-          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:purple; padding-bottom: 15px; font-size:200% ;','Case number of COVID-19 in Ghana'),
-          options = list(paging = TRUE, 
-                         pageLength = 7,
-                         pageWidth = 7,
-                         scrollX = T, #fit the table within the page margin
+          caption = htmltools::tags$caption( style = 'caption-side: top; text-align: center; color:purple; padding-bottom: 20px; font-size:200% ;','Rate of top four areas per 100 thousand people'),
+          options = list(paging = FALSE, 
+                         dom = "t",
+                         scrollX = T,
                          columnDefs = list(list(className = 'dt-center')),
                          fnDrawCallback = htmlwidgets::JS(
  "function(settings, json) {",
+    "HTMLWidgets.staticRender();" ,
     "$(this.api().table().header()).css({'font-size': '15px', 'background-color': '#c2d1f0', 'color': '#fff'});",
     "$(this.api().columns().data()).css({'font-size': '5px'});",
 
