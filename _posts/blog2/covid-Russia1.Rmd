@@ -20,8 +20,32 @@ biblio-style: authoryear-comp
 
 # Introduction
 
+COVID-19 virus (corona virus) has been starting to spread inside of Russia. This is important to investigate and understand the spreading from a very low level. As Russia is a very huge and heterogeneous country, for better analyze we have to consider Russia infection cases distributed by region. And we will also explore the death rate and recovered rate of some high-confirmed regions, presenting by two graphs.
 
 # Data description
+
+## Data source
+
+## Data explanation
+
+Variable       | Description
+---------------|------------
+Date   	       |The recorded date
+Region	       |Region name in Russia
+Region ID	     |Region ID
+DConf	         |Daily confirmed cases
+DDeath	       |Daily death cases
+DRec    	     |Daily recovered cases
+Conf           |The cumulative confirmed cases
+Death          |The cumulative death cases
+Rec     	     |The cumulative recovered cases
+Latitude    	 |Latitude
+LongitudeD     |Longitude 
+Population     |Population in that region
+Conf_rate	     |confirmed rate
+Death_rate	   |death rate
+Rec_rate   	   |recovered rate
+
 
 
 # Data Analysis
@@ -62,7 +86,7 @@ region_pop <- region_info %>%
   
 ```
 
-# Story 1
+## Story 1
 
 ```{r}
 #rename the column name
@@ -97,7 +121,7 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
             )
 ```
 
-# Story 2
+## Story 2
 
 ```{r}
 region_pop<- region_pop %>%
