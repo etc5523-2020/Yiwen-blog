@@ -89,6 +89,13 @@ region_pop <- region_info %>%
 
 ## Region Distribution
 
+As a transcontinental country, Russia has the highest number of confirmed cases in Europe, the second-highest in Asia after India, and the fourth-highest in the world after the United States, India, and Brazil.[@wikipedia2020] Therefore, for such a country with a large number of confirmed cases and a vast territory, we should look at the spread and distribution of COVID-19 from a lower dimension level, which means exploring that by regions.
+
+Map \@ref(fig:confirmed-map) shows the region distribution of COVID-19 in Russia, the region marked with a circle indicates that there are confirmed cases. And the larger the circle radius, the more confirmed cases in this area.
+
+It can be observed that COVID-19 in Russia was centered in the city of Moscow, which accounted for the highest number of cases, measuring at over 241 thousand as of July 31, 2020. It was followed by the Moscow Region with approximately 63 thousand. In total, around 0.84 million COVID-19 cases were recorded in Russia as of that date.
+                                              
+On 2 March, the first case in Russia was confirmed in Moscow, and then COVID-19 spread rapidly across the country. As Moscow is the transportation center and the largest comprehensive city in Russia, the flow of people is huge and the crowd is dense, which provides conditions for the spread of the disease on a large scale, which is also one of the reasons why Moscow has become the area with the most confirmed cases. And it can be seen that the most confirmed regions followed by Moscow are not far from it in this map.
 
 ```{r rename}
 #rename the column name
@@ -105,7 +112,7 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
 ```
 
 
-```{r confirmed-data}
+```{r confirmed-map,fig.cap="COVID-19 Region Distribution in Russia"}
 #draw the map of distribution of confirmed cases
   leaflet() %>%
             #use setView() to choose the  map center and zoom level
@@ -171,14 +178,14 @@ covid_rate_top4 <- covid_rate %>%
   filter(Region == c("Yamalo-Nenets Autonomous Okrug","Moscow","Tyva Republic","Murmansk region"))
 ```
 
-```{r topfourrate, fig.cap="Confirmed rate of top four areas per 100 thousand people"}
+```{r topfourrate, fig.cap="Death and Recovered rate per 100,000 population (4 regions)"}
 p2 <- covid_rate_top4 %>%
   ggplot(aes(x = Date,
              group = Region)) +
   geom_line(aes(y = Death_rate, color = "death rate"))+
   geom_line(aes(y = Rec_rate, color = "recovered rate")) +
   facet_wrap(~Region) +
-  ggtitle("Confirmed rate of top four areas per 100 thousand people") + 
+  ggtitle("Death and Recovered rate per 100,000 population (4 regions)") + 
   ylab("Rate") +
   theme(#axis.title.x = element_blank(),
         axis.text.x = element_blank(),
