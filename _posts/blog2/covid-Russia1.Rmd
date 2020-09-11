@@ -50,6 +50,7 @@ Rec_rate   	   |recovered rate
 
 # Data Analysis
 
+In this section, I will explore the region distribution of COVID-19 in Russia, as well as the death rate and recovered rate of the top four high-confirmed regions.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(coronavirus)
@@ -68,12 +69,12 @@ library(leaflet)
 library(ggplot2)
 ```
 
-```{r}
+```{r read-data}
 russia_case <- read_csv(here::here("_posts/blog2/data-Russia/covid19-russia-cases-scrf.csv"))
 region_info <- read_csv(here::here("_posts/blog2/data-Russia/regions-info.csv"))
 ```
 
-```{r}
+```{r clean-data}
 #delete the column won't be used and drop NA
 russia_case <- russia_case %>%
   select(-`Region/City`)
@@ -86,9 +87,10 @@ region_pop <- region_info %>%
   
 ```
 
-## Story 1
+## Region Distribution
 
-```{r}
+
+```{r rename}
 #rename the column name
 russia_case <- russia_case %>%
   setNames(c("Date","Region","Region_ID","DConf","DDeath","DRec","Conf","Death","Rec"))
@@ -97,7 +99,7 @@ region_info_new <- region_info_new %>%
   setNames(c("Region","Latitude","LongitudeD"))
 ```
 
-```{r}
+```{r join-data}
 #join the data
 covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
 ```
@@ -121,9 +123,9 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
             )
 ```
 
-## Story 2
+## Death rate and Recovered rate
 
-```{r}
+```{r  mutate-data}
 region_pop<- region_pop %>%
   setNames(c("Region","Population"))
 
@@ -162,7 +164,7 @@ datatable(covid_top_rate,
 
 ```
 
-```{r}
+```{r filter-data}
 # filter top four confirmed rate areas' data
 
 covid_rate_top4 <- covid_rate %>%
@@ -187,7 +189,7 @@ ggplotly(p2)
 
 # Conclusion
 
-Generally speaking, the situation of COVID-19 in Ghana presents a trend of normal development and ideal control with a quite low level death cases and balanced situation between confirmed cases and recovered cases. However, with the cumulative increase of confirmed cases and the influence of neighboring countries, the ability of the country’s health system will also face a crisis, so both individuals and the whole society of Ghana should still take it seriously.
+
 
 
 # Acknowledgments
