@@ -7,7 +7,7 @@ author:
     url: https://thirsty-pasteur-78571a.netlify.app/
 date: 09-12-2020
 categories:
-  - COVID-19 Ghana
+  - COVID-19 Russia
 output:
   distill::distill_article:
     toc: true
