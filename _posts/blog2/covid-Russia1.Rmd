@@ -1,7 +1,7 @@
 ---
 title: "COVID-19 analysis for Russia"
 description: |
-  Welcome to my new blog, this is the anlaysis of COVID-19 for Russia, mainly focusing on exploring case numbers. Hope you can enjoy reading what I share and display!
+  Welcome to my new blog, this is the anlaysis of COVID-19 for Russia, mainly focusing on the region distribution, death rate and recovered rate. Hope it can help after you read it!
 author:
   - name: Yiwen Zhang 
     url: https://thirsty-pasteur-78571a.netlify.app/
@@ -26,7 +26,8 @@ COVID-19 virus (corona virus) has been starting to spread inside of Russia. This
 
 ## Data source
 
-The data is mainly collected from  
+The data is mainly collected from official government resource [@russiaofficial].And it is then cleaned by a data scientist. I download the dataset from website Kaggle. [@kapral2020] I used two .csv files to cover my data story, which contains 15 variables in total as followed.
+
 ## Data explanation
 
 Variable       | Description
@@ -88,7 +89,7 @@ region_pop <- region_info %>%
   
 ```
 
-## Region Distribution
+## Story 1 - Region Distribution
 
 As a transcontinental country, Russia has the highest number of confirmed cases in Europe, the second-highest in Asia after India, and the fourth-highest in the world after the United States, India, and Brazil.[@wikipedia2020] Therefore, for such a country with a large number of confirmed cases and a vast territory, we should look at the spread and distribution of COVID-19 from a lower dimension level, which means exploring that by regions.
 
@@ -131,9 +132,9 @@ covid_location = left_join(x = russia_case, y = region_info_new, by="Region")
             )
 ```
 
-## Death rate and Recovered rate
+## Story 2 - Death rate and Recovered rate
 
-In this part, I would focus on the death rate and recovered rate in some regions. Considering the large number of regions, I chose the top four regions with the largest cumulative confirmed rates (per 10,000 population) as the analysis objects .I think it is more representative, because such areas often have the best medical conditions in Russia, from which  we can also have a glimpse of Russia's treatment of the COVID-19. And Table\@ref(fig:table2) shows these top four regions. They are Yamalo-Nenets Autonomous Okrug, Moscow, Tyva Republic and Murmansk region.
+In this part, I would focus on the death rate and recovered rate in some regions. Considering the large number of regions, I chose the top four regions with the largest cumulative confirmed rates (per 10,000 population) as the analysis objects. I think it is more representative, because such areas often have the best medical conditions in Russia, from which  we can also have a glimpse of Russia's treatment of the COVID-19. And Table \@ref(fig:table2) shows these top four regions. They are Yamalo-Nenets Autonomous Okrug, Moscow, Tyva Republic and Murmansk region.
 
 ```{r  mutate-data}
 region_pop<- region_pop %>%
@@ -174,9 +175,14 @@ datatable(covid_top_rate,
 
 ```
 
-So, I draw line graphs for these four regions as Figure\@ref(fig:topfourrate). It can be observed that all these regions have quite low death rates which are close to zero. Why are not death rates rising with case numbers? It is likely that among the steadily rising number of people who have tested positive for the disease, an increasing proportion are young and a declining proportion are older, so that having the disease is dramatically less lethal for each person with it.[@coviddeathrate]
+
+So, I draw line graphs for these four regions as Figure \@ref(fig:topfourrate). It can be observed that all these regions have quite low death rates which are close to zero. Why are not death rates rising with case numbers? It is likely that among the steadily rising number of people who have tested positive for the disease, an increasing proportion are young and a declining proportion are older, so that having the disease is dramatically less lethal for each person with it.[@coviddeathrate]
+
 As for the recovered rate, all these four show upward trends, which shows that the overall cure trend is good. To be more detail, the cure rate of Yamalo-Nenets Autonomous Okrug shows a rapid increase. It is easy to understand that the number of cured people will increase the most with the time because of the large number of infected people. And the slope of this curve is also the largest, which also shows that the growth rate of cure cases is the largest, indicating that the medical conditions in this region are quite ideal. 
+
 However, Moscow has the most population, and the growth rate of recovered cases is getting gradually decreased. Due to the reducing of daily confirmed cases, the daily recovered cases have also decreased. And that is why the cure rate curve in Moscow becomes more and more gentle.
+
+
 ```{r filter-data}
 # filter top four confirmed rate areas' data
 
