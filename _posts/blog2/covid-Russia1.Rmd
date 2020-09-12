@@ -202,7 +202,7 @@ ggplotly(p2)
 
 # Conclusion
 
-
+General speaking, the coronavirus is widely distributed in Russia, but it is mainly concentrated in several regions with Moscow as the center. In terms of disease control and cure, the mortality rate remained at a very low level, while the cure rate showed a continuously rising trend, indicating that although the epidemic situation in Russia was severe, the anti-epidemic achievements were great.
 
 
 # Acknowledgments
