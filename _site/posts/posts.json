@@ -6,7 +6,7 @@
     "author": [
       {
         "name": "Yiwen Zhang",
-        "url": {}
+        "url": "https://thirsty-pasteur-78571a.netlify.app/"
       }
     ],
     "date": "2020-09-03",
@@ -14,7 +14,25 @@
       "COVID-19 Ghana"
     ],
     "preview": "posts/blog1/COVID-19.png",
-    "last_modified": "2020-09-04T12:26:56+10:00",
+    "last_modified": "2020-09-04T14:02:14+10:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/blog2/",
+    "title": "COVID-19 analysis for Russia",
+    "description": "Welcome to my new blog, this is the anlaysis of COVID-19 for Russia, mainly focusing on the region distribution, death rate and recovered rate. Hope it can help after you read it!",
+    "author": [
+      {
+        "name": "Yiwen Zhang",
+        "url": "https://thirsty-pasteur-78571a.netlify.app/"
+      }
+    ],
+    "date": "2020-09-03",
+    "categories": [
+      "COVID-19 Ghana"
+    ],
+    "preview": "posts/blog2/covid-Russia.png",
+    "last_modified": "2020-09-12T23:04:18+10:00",
     "input_file": {}
   }
 ]
