@@ -5,7 +5,7 @@ description: |
 author:
   - name: Yiwen Zhang 
     url: https://thirsty-pasteur-78571a.netlify.app/
-date: 09-03-2020
+date: 09-12-2020
 categories:
   - COVID-19 Ghana
 output:
