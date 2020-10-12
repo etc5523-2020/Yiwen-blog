@@ -24,4 +24,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
+My shiny app is an interactive web app built straight from R, with the using of shiny package[@shiny], and some other packages like tidyverse[@tidyverse], ggplot2[@ggplot2], plotly[@plotly], leaflet[@leaflet], DT[@DT], highcharter[@highcharter] and shinythemes[@shinythemes]. And the main title of this app is COVID-19 Global Analysis. It consists of four main pages.
+
+- The first page contains the map that displays the distribution of confirmed cases, recovered cases and deaths. And users can determine which type of case to explore by selecting from the sidebar on the left. In this way, not only can users know the geographical distribution of the cases, but also grasp a general view of this epidemic. 
+
+  *The United States has the largest number of confirmed cases and deaths, which shows that the United States is the most    serious epidemic area in the world. India has the largest number of cured cases, with the cure rate reaching to around    81.3%, which indicates that India's medical conditions are worthy of recognition in this case.*
+
+- Then it comes to the second page, which includes a interactive line chart on the trend of the case changing over time. After having a macro understanding of the COVID-19 through the map, we narrow the geographical scope to different states or provinces in each country, and further observe the changes of this epidemic over time among different regions. 
+There are three lines in this chart. The yellow line represents the confirmed case, the green line represents the recovered case and the red line represents the deaths. 
+
+  *It can be seen that in most regions, the number of deaths has remained at a low growth level, while the number of         confirmed cases and cured cases has increased to varying degrees*
+
+- If we want to more specific numeric results, then wen can refer to the interactive table in the third page. When inputting the key word, the results you want to explore will show in the table.
+
+- The last page consists of three sub-pages, which are "About", "Instruction" and "Acknowledgements".
+  + The "About" page is about the purpose and the creator of the app
+  + The "Instruction" is about the detailed steps to run this app and the session information.
+  + The "Acknowledgements" is about the thanks for the data source and the packages I used in this app, as well as the        references.
+
 # Self Review
