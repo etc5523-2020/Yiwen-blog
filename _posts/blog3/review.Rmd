@@ -13,7 +13,7 @@ output:
     toc: true
     toc_depth: 2
     self_contained: false
-preview: REVIEW.jpeg
+preview: review.jpg
 bibliography: references.bib
 biblio-style: authoryear-comp
 ---
