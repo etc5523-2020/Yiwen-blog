@@ -1,5 +1,23 @@
 [
   {
+    "path": "posts/blog3/",
+    "title": "Review for Shiny App on COVID-19 Analysis",
+    "description": "This is the review for my previous shiny app on COVID-19 global analysis. In this review, I will introduce the content of my app , then show both where it's done well, where it's worth improving, and what I might add next time. Hope you can enjoy when reading!",
+    "author": [
+      {
+        "name": "Yiwen Zhang",
+        "url": "https://thirsty-pasteur-78571a.netlify.app/"
+      }
+    ],
+    "date": "2020-10-12",
+    "categories": [
+      "Shiny App Review"
+    ],
+    "preview": "posts/blog3/review.jpg",
+    "last_modified": "2020-10-13T11:07:13+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/blog2/",
     "title": "COVID-19 analysis for Russia",
     "description": "Welcome to my new blog, this is the anlaysis of COVID-19 for Russia, mainly focusing on the region distribution, death rate and recovered rate. Hope it can help after you read it!",
@@ -14,8 +32,8 @@
       "COVID-19 Russia"
     ],
     "preview": "posts/blog2/covid-Russia.png",
-    "last_modified": "2020-09-12T23:25:50+10:00",
-    "input_file": "covid-Russia1.utf8.md"
+    "last_modified": "2020-09-12T21:25:50+08:00",
+    "input_file": {}
   },
   {
     "path": "posts/blog1/",
@@ -32,7 +50,7 @@
       "COVID-19 Ghana"
     ],
     "preview": "posts/blog1/COVID-19.png",
-    "last_modified": "2020-09-04T14:02:14+10:00",
+    "last_modified": "2020-09-04T12:02:14+08:00",
     "input_file": {}
   }
 ]
