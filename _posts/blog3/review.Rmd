@@ -35,7 +35,7 @@ There are three lines in this chart. The yellow line represents the confirmed ca
 
   *It can be seen that in most regions, the number of deaths has remained at a low growth level, while the number of         confirmed cases and cured cases has increased to varying degrees*
 
-- If we want to more specific numeric results, then wen can refer to the interactive table in the third page. When inputting the key word, the results you want to explore will show in the table.
+- If we want more specific numeric results, then wen can refer to the interactive table in the third page. When inputting the key word, the results you want to explore will show in the table.
 
 - The last page consists of three sub-pages, which are "About", "Instruction" and "Acknowledgements".
   + The "About" page is about the purpose and the creator of the app
@@ -46,11 +46,11 @@ There are three lines in this chart. The yellow line represents the confirmed ca
 
 - Firstly, I think what I did well is that I use a quite visual appealing map to show the distribution of the case, which is also a new point for me to learn about the "highcharter" graph. And I add enough text inside the app to guide the user how to use each section, as well as writing some explanation under the plot to summarize what can be learned from that to make my app more easy-reading. What's more, I try to make the structure of this app more complete as much as possible.
 
-- However, there are some points I can improve. The first thing is the appearance of my app, although I tried my best to beautify it for a long time, the results showed that I could make it further to my ideal appearance to improve the user experience. The second thing is about the interactive table, it also needs to be optimized. And the plotly graph, I think its appearance is not very ideal either. The last point is the "more" page, the typography in this page also needs to be improved.
+- However, there are some points that I can improve. The first thing is the appearance of my app, although I tried my best to beautify it for a long time, the results showed that I could make it further to my ideal appearance to improve the user experience. The second thing is about the interactive table, it also needs to be optimized. And the plotly graph, I think its appearance is not very ideal either. The last point is the "more" page, the typography in this page also needs to be improved.
 
-- As for the things that can be added to my app, I would like to add two tab panels in the navbar, one is linked to my github website, another is a link used to email me. In this way, if there is any wrong or user want to communicate with me, they can contact me conveniently. In addition, some interesting pictures can be added inside the app to make it more fascinating.
+- As for the things that can be added to my app, I would like to add two tab panels in the navbar, one is linked to my github website, another is a link used to email me. In this way, if there is any wrong or users want to communicate with me, they can contact me conveniently. In addition, some interesting pictures can be added inside the app to make it more fascinating.
 
-- I originally wanted to add the infection rate and diagnosis rate of the COVID-19 in the total population. However, due to the limitation of the data, that is, there is no population in each state/province in the data. Even if I go to search the population data of cities separately, it is difficult to match them together. Then, population data in small regions of some small countries is hard to find as well. Another thing is about the interactive table, I think it's possible to add more complex elements, but I haven't mastered it yet.
+- I originally wanted to add the infection rate and diagnosis rate of the COVID-19 in the total population. However, due to the limitation of the data, that is, there is no population in each state/province in the data. Even if I go to search the population data of states/provinces separately, it is difficult to match them together. What's more, population data in small regions of some small countries is hard to find as well. Another thing is about the interactive table, I think it's possible to add more complex elements, but I haven't mastered it yet.
 
 
 Overall, I benefited a lot from this assignment. I also learned new charts and the way to make shiny. I think I did well on the whole, basically met the requirements, and also took my own ideas. However, it is still a simple and simple achievement. There are many places worth further improvement, making it more refined and complete, and also enabling users to have better experience.
