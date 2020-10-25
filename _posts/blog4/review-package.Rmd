@@ -1,0 +1,34 @@
+---
+title: "Review for package 'COVID19usa'"
+description: |
+  This is the review for package 'COVID19usa', which contains the context and a check list.
+author:
+  - name: Yiwen Zhang 
+date: 10-12-2020
+categories:
+  - Package Review
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+preview: covid19usa.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+The package I reviewed is named "covid19usa", which is created by Brendi Ang. The goal of the "covid19usa" package is to provide an embedded interactive R Shiny web application for key data visualization of Covid-19 cases and testing efficiency across the U.S states. 
+
+And it contains two main functions, which are refactored from user-interface and sever-side logic of the shiny app embedded inside the package:
+
+- ui_input() : Creates reactive input for Shiny app.
+- us_pop_ests : Provides the dataset for the estimated population by U.S county, primarily used for relational joins.
+
+What's more, it also provides the relevant datasets to run this shiny app and for further use. One is the dataset for the Confirmed Covid-19 Cases and Deaths by States in the U.S, reported by The New York Times, from 2020-01-22 to 2020-10-07. Another one is the US map data for states.
+
+
+# 
