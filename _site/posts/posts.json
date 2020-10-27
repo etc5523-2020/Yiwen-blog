@@ -1,5 +1,23 @@
 [
   {
+    "path": "posts/blog4/",
+    "title": "Review for 'COVID19usa'",
+    "description": "This is the review for package 'COVID19usa', which contains the context and a check list.",
+    "author": [
+      {
+        "name": "Yiwen Zhang",
+        "url": {}
+      }
+    ],
+    "date": "2020-10-28",
+    "categories": [
+      "Package Review"
+    ],
+    "preview": "posts/blog4/covid19usa.png",
+    "last_modified": "2020-10-28T00:49:01+08:00",
+    "input_file": "review-package.utf8.md"
+  },
+  {
     "path": "posts/blog3/",
     "title": "Review for Shiny App on COVID-19 Analysis",
     "description": "This is the review for my previous shiny app on COVID-19 global analysis. In this review, I will introduce the content of my app , then show both where it's done well, where it's worth improving, and what I might add next time. Hope you can enjoy when reading!",

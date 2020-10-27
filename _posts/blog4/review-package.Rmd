@@ -1,10 +1,10 @@
 ---
-title: "Review for package 'COVID19usa'"
+title: "Review for 'COVID19usa'"
 description: |
   This is the review for package 'COVID19usa', which contains the context and a check list.
 author:
   - name: Yiwen Zhang 
-date: 10-12-2020
+date: 10-28-2020
 categories:
   - Package Review
 output:
