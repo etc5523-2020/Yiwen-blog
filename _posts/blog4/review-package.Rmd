@@ -34,10 +34,28 @@ What's more, it also provides the relevant datasets to run this shiny app and fo
 
 On the first I look into this package, I thought it should first provide the shiny app on COVID-19, then relevant datasets to run the app and the functions that can be used in a further stage smoothly. Also, I expect there will be a detailed instruction and the documentation inside both package and shiny app will be logical and concise enough, so I can have a smoother experience on referring this package.
 
-When I actually reviewing this package, I found it an excellent package with complete structure and clear logic. It did most of what I expected. I can get th data easily, run the function smoothly, and most importantly, the shiny app, can be launched up successfully. 
+When I actually reviewing this package, I found it an excellent package with complete structure and clear logic. It did most of what I expected. I can get the data easily, run the function smoothly, and most importantly, the shiny app, can be launched up successfully. 
 
-When exploring the shiny app, I found the UI interface is quite visual appealing, which brings me a good experience. And I can get to know the COVID-19 condition of USA easily by controlling the input of date and state. And the "About" page is also very fluent and clear, from which I can quickly get to know the motivation and the creator of this app. 
+When exploring the shiny app, I found the UI interface is quite visual appealing, which brings me a good experience. And I can get to know the COVID-19 condition of USA easily by controlling the input of date and state. The "About" page is also very fluent and clear, from which I can quickly get to know the motivation and the creator of this app. 
 
 # What I suggest
 
+Although this package is amazing, I have some suggestions that are mainly for the shiny app.
 
+First, I notice that after opening the app, I must set the input options and click the button "show the trend" first, before the graph appear. My suggestion is that it's better to display a defauLt graph at the beginning, which I believe will be more visual appealing! In addition, after setting the options, it is better to directly generate graphs automatically without clicking the button again, which will be more convenient and bring better visual experience to users.
+
+What's more, there is only one type distribution map of COVID-19 cases (confirmed cases), which is quite sensible. After all, people are most concerned about the diagnosis of the epidemic situation. However, it will be more comprehensive if the death and recovered cases can be added to reflect the cure and control effect of different regions.
+
+At last, the only thing for the package is that it's best to document all the packages needed to run the shiny app in the README file, because I found it not completely written now, which led me to get remind of the lack of packages by R Studio when running shiny, and got interrupted several times before success.
+
+# What I learned
+
+I learned a lot by exploring this package. 
+
+First of all, in terms of structure, I should cover the content as much as possible like the author. For example, including the contact information of the creator in the READEME part, so that users can report bugs or errors in time.
+
+Additionally, it's the interactive table. The author only selected one day's case as the display, which well controlled the amount of data in the table. And my biggest mistake is just on this issue. I did not filter the table data, so it seems that there is no focus and too much data in the table.
+
+Finally, I also realize that shiny dashboard is more beautiful and user-friendly, and I'll try to apply it in another assignment I'm working on.
+
+Overall, the author of "covid19usa" did do an excellent job, and the package is really an outstanding work. I feel so delighted when exploring that. Thanks for the hard working of Brendi Ang. : )
