@@ -14,8 +14,8 @@
       "Package Review"
     ],
     "preview": "posts/blog4/covid19usa.png",
-    "last_modified": "2020-10-28T10:40:11+08:00",
-    "input_file": "review-package.utf8.md"
+    "last_modified": "2020-10-28T10:40:12+08:00",
+    "input_file": {}
   },
   {
     "path": "posts/blog3/",
@@ -33,7 +33,7 @@
     ],
     "preview": "posts/blog3/review.jpg",
     "last_modified": "2020-10-28T00:54:25+08:00",
-    "input_file": "review.utf8.md"
+    "input_file": {}
   },
   {
     "path": "posts/blog2/",
