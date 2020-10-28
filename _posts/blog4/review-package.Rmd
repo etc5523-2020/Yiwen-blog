@@ -59,3 +59,38 @@ Additionally, it's the interactive table. The author only selected one day's cas
 Finally, I also realize that shiny dashboard is more beautiful and user-friendly, and I'll try to apply it in another assignment I'm working on.
 
 Overall, the author of "covid19usa" did do an excellent job, and the package is really an outstanding work. I feel so delighted when exploring that. Thanks for the hard working of Brendi Ang. : )
+
+
+# Appendix
+
+## Package Review
+
+*Please check off boxes as applicable, and elaborate in comments below.*
+
+#### Documentation 
+
+The package includes all the following forms of documentation: 
+
+- [x] **Installation instructions:** for the package is found in README 
+The instruction is clearly documented in READEME, but if there also includes all the packages needed to run the app, it's much better!
+
+- [x] **Vignette(s)** demonstrating major functionality that runs successfully locally
+The vignettes is well structured and has a detailed introduction to the package and the use of the shiny app.
+
+- [x] **Function Documentation:** for all exported functions in R help 
+The function documentation is clearly written and can be easily understood by users.
+
+- [x] **Examples** for all exported functions in R Help that run successfully locally 
+There are enough examples for the use of functions and can run successfully locally.
+
+#### Functionality 
+
+- [x] **Installation:** Installation succeeds as documented.
+When installing the package, it succeeded, despite waiting for a while.
+
+- [x] **Functionality:** Any functional claims of the software been confirmed.
+The function of the function in this package was verified when I ran it.
+
+- [x] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
+All the tests on the function are intuitive and representative, and they passed successfully on my local computer.
+
