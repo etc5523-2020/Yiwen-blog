@@ -4,6 +4,7 @@ description: |
   This is the review for package 'COVID19usa', which contains the context and a check list.
 author:
   - name: Yiwen Zhang 
+  
 date: 10-28-2020
 categories:
   - Package Review
